@@ -18,7 +18,7 @@ export default{
         filename: 'bundle.js'
     },
     devServer: {
-
+        contentBase: './src'
     },
     plugins:[
 
