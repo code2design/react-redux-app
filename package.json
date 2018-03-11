@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "Brushing up knowledege on React and Building an app",
   "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all --parallel open:src lint:watch test:watch",
+    "open:src": "babel-node tools/srcServer.js",
+    "lint": "node_modules/.bin/esw webpack.config.* src tools",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
+  },
   "author": "Supritkumar Shah",
   "license": "MIT",
   "dependencies": {
@@ -10,10 +18,12 @@
     "bootstrap": "4.0.0",
     "jquery": "3.3.1",
     "npm": "5.7.1",
+    "prop-types": "^15.6.1",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-redux": "5.0.7",
     "react-router": "4.2.0",
+    "react-router-dom": "^4.2.2",
     "react-router-redux": "4.0.8",
     "redux": "3.7.2",
     "redux-thunk": "2.2.0",
