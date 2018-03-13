@@ -16,7 +16,8 @@ export default{
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: path.resolve(__dirname, 'src')
+        contentBase: path.resolve(__dirname, 'src'),
+        hot:true
     },
     plugins:[
         new webpack.HotModuleReplacementPlugin(),
